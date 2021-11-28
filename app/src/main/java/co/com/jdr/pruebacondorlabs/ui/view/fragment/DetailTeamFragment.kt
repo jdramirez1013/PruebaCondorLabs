@@ -87,6 +87,9 @@ class DetailTeamFragment : Fragment() {
             }
         }
 
+        if(url.isEmpty())
+            return
+
         if (!url.startsWith("http://") && !url.startsWith("https://"))
             url = "https://$url"
 

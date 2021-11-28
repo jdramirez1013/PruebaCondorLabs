@@ -2,10 +2,13 @@ package co.com.jdr.pruebacondorlabs.ui.view.fragment
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import androidx.databinding.adapters.AdapterViewBindingAdapter
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import co.com.jdr.pruebacondorlabs.R
@@ -30,6 +33,8 @@ class ListTeamFragment : Fragment() {
 
         binding = FragmentListTeamBinding.inflate(inflater, container, false)
 
+        binding.clase = this
+
         return binding.root
     }
 
@@ -37,7 +42,7 @@ class ListTeamFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[ListTeamViewModel::class.java]
 
-        viewModel.getTeams("Spanish La Liga")
+
 
         adapter = TeamAdapter(ArrayList()){
             listDetailTeam.selectedTeam(it)
@@ -50,6 +55,7 @@ class ListTeamFragment : Fragment() {
 
         viewModel.listTeam.observe(viewLifecycleOwner, {
             adapter.updateList(it)
+            binding.rvTeam.smoothScrollToPosition(0)
         })
 
         binding.rvTeam.layoutManager = LinearLayoutManager(this.requireContext())
@@ -64,5 +70,10 @@ class ListTeamFragment : Fragment() {
         }
 
     }
+
+    fun onLeagueSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long){
+        viewModel.getTeams(binding.spLeague.selectedItem.toString())
+    }
+
 
 }

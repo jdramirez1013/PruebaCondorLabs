@@ -15,7 +15,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         Timer().schedule(timerTask {
             goToList()
-        }, 2000)
+        }, 1500)
     }
 
     fun goToList(){

@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">PruebaCondorLabs</string>
     <string name="seleccione_liga">Seleccione la liga que desea ver</string>
+    
+    <string-array name="leagues">
+        <item>Spanish La Liga</item>
+        <item>English Premier League</item>
+        <item>Colombia Categoría Primera A</item>
+    </string-array>
+    
 </resources>
