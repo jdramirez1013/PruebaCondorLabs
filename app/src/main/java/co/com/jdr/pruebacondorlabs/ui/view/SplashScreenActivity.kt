@@ -1,6 +1,8 @@
 package co.com.jdr.pruebacondorlabs.ui.view
 
 import android.annotation.SuppressLint
+import android.content.Intent
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import java.util.*
@@ -12,7 +14,13 @@ class SplashScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         Timer().schedule(timerTask {
-
+            goToList()
         }, 2000)
+    }
+
+    fun goToList(){
+        val intent = Intent(this, ListTeamActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }

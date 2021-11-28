@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PruebaCondorLabs</string>
+    <string name="seleccione_liga">Seleccione la liga que desea ver</string>
 </resources>

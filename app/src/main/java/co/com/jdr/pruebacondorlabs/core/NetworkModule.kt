@@ -11,7 +11,8 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-interface NetworkModule {
+object NetworkModule {
+
     @Singleton
     @Provides
     fun provideRetrofit(): Retrofit {
