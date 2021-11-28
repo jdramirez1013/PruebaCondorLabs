@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PruebaCondorLabs">
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".ui.view.ListTeamActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.SplashScreenActivity"
             android:exported="true"
             android:theme="@style/SplashScreen">
             <intent-filter>

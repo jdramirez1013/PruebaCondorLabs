@@ -1,4 +1,4 @@
-package co.com.jdr.pruebacondorlabs
+package co.com.jdr.pruebacondorlabs.ui.view
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
